@@ -15,4 +15,9 @@ public class HelloController {
         return "Hello World";
     }
 
+    @GetMapping(value = "/varible1/{variable}")
+    public String getVariable(@PathVariable String variable) {
+        return variable;
+    }
+
 }
