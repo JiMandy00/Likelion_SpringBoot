@@ -56,4 +56,10 @@ public class HelloController {
         });
         return sb.toString();
     }
+
+    // MemberDto class를 활용
+    @GetMapping(value = "/request3")
+    public String getRequestParam3(MemberDto memberDto) {
+        return memberDto.toString();
+    }
 }
