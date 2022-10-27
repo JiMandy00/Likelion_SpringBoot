@@ -46,5 +46,14 @@ public class HelloController {
         return "이름 : " + name + " 메일 : " + email + " 소속 : " + organization;
     }
 
-
+    // 만약 쿼리 스트링에 어떤 값이 들어올지 모른다면 아래와 같이 Map을 활용할 수 있습니다.
+    // 필수로 입력하지 않아도 되는 경우 예를들어 취미나 전화번호 등 이럴때 효율적으로 사용 가능하다
+    @GetMapping(value = "/request2")
+    public String getRequestParam2(@RequestParam Map<String, String> param) {
+        StringBuilder sb = new StringBuilder();
+        param.entrySet().forEach(map -> {
+            sb.append(map.getKey() + " : " + map.getValue() + "\n");
+        });
+        return sb.toString();
+    }
 }
